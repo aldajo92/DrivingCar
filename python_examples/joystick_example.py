@@ -1,8 +1,10 @@
 import pygame
 import time
 
-pygame.init()
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
+pygame.init()
 pygame.joystick.init()
 
 joystick = pygame.joystick.Joystick(0)
@@ -10,7 +12,6 @@ joystick.init()
 done = False
 
 if __name__ == "__main__":
-
 	while done == False:
 		for event in pygame.event.get():  # User did something
 			if event.type == pygame.JOYBUTTONDOWN:
